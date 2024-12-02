@@ -170,7 +170,8 @@ const TypeInfo_Cpp * get_type_info(const InterfaceTypeName & interface_type)
   //           e.g. 'String_')
   std::string ts_func_name =
     "_ZN36rosidl_typesupport_introspection_cpp31get_message_type_support_handleIN" +
-    std::to_string(pkg_name.length()) + pkg_name + "3msg" +
+    // TODO: make this configurable
+    std::to_string(pkg_name.length()) + pkg_name + /*"3msg" +*/ "6action" +
     std::to_string(msg_name.length() + 1) + msg_name +
     "_ISaIvEEEEEPK29rosidl_message_type_support_tv";
   RCUTILS_LOG_DEBUG_NAMED("dynmsg", "Loading C++ type support function %s", ts_func_name.c_str());
